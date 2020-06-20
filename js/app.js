@@ -1,6 +1,21 @@
+var questions = [
+  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
+  new Question('blah2, blah2, blah2', ['blep2', 'clip2', 'teas2', 'coffe2'], 'clip2'),
+  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
+  new Question('blah4, bla4h, bla4h', ['blep4', 'cli4p', 'teas4', 'coffe4'], 'clip4'),
+]
+
+var quiz = new Quiz(questions)
+
+populate()
+
+console.log(quiz.isEnded())
 function populate() {
   if (quiz.isEnded()) {
     //do something
+    console.log('done1')
+    showScores()
+    console.log('done2')
   }
   else {
     //show questions
@@ -9,7 +24,7 @@ function populate() {
 
     // show Choices
     var choices = quiz.getQuestionIndex().choices;
-    for (var i = 0; i < choices.length; i++){
+    for (var i = 0; i < choices.length; i++) {
       var element = document.querySelector('#choice' + i)
       element.innerHTML = choices[i];
       guess('btn' + i, choices[i]);
@@ -22,7 +37,7 @@ function guess(id, guess) {
   var button = document.getElementById(id);
   button.onclick = function () {
     quiz.guess(guess);
-    populate
+    populate()
   }
 }
 
@@ -36,16 +51,8 @@ function showScores() {
   var gameOverHtml = `<h1>Result</h1>`;
   gameOverHtml += `<h2 id = 'score'>Your Score: ${quiz.score} <h2>`
 
-  var elem = document.getElementById('quiz');
-  elem.innerHTML = gameOverHtml;
+  const display = document.getElementById('quiz');
+  console.log(document.querySelector('#quiz'))
+  display.innerHTML = gameOverHtml;
 }
-var questions = [
-  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
-  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
-  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
-  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
-]
 
-var quiz = new Quiz(questions)
-
-populate()
