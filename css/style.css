@@ -4,6 +4,7 @@ body {
   justify-content: center;
   display: flex;
   align-items: center;
+  padding-top: 10%;
 }
 
 .grid {
@@ -19,10 +20,10 @@ body {
 .grid h1 {
   font-family: sans-serif;
   background-color: rgba(23, 11, 114, 0.8);
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
   color: rgb(255, 255, 255);
-  padding: 2px 0px;
+  padding: 5%;
   border-radius: 50px;
 }
 
@@ -58,5 +59,35 @@ button {
 }
 
 #btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus {
-  outline: none;  
+  outline: none;
+}
+
+.opt {
+  float: left;
+  background-color: #fff;
+  color: rgba(63, 59, 100, 0.8);
+  border-radius: 70px;
+  padding: 1px;
+  width: 10%;
+}
+
+.disbtn {
+  float: center;
+  width: 70%;
+  background-color: rgba(23, 11, 114, 0.8);
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #1a1a1f;
+  border-radius: 50px;
+  margin: 10px, 40px, 10px 0px;
+  padding: 10px 10px;
+}
+
+.disbtn:hover {
+  cursor: pointer;
+  background-color: rgb(9, 2, 75);
+}
+
+.disbtn:focus {
+  outline: none;
 }

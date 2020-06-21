@@ -9,30 +9,50 @@
 </head>
 <body>
   <div class="grid">
-    <div id="quiz">
-      <h1>Quiz</h1>
-      <hr style="margin-top: 20px;">
+    <div id="display">
 
-      <p id="question"></p>
-      <div class="buttons">
-        <button id="btn0"><span id="choice0"></span></button>
-        <button id="btn1"><span id="choice1"></span></button>
-        <button id="btn2"><span id="choice2"></span></button>
-        <button id="btn3"><span id="choice3"></span></button>        
-      </div>
+              <h1>Welcome</h1>
+              <hr style="margin-top: 20px; margin-bottom: 20px;">
+              
+              <button class="disbtn" onclick="window.location.assign('quiz.html')"> Start </button>
+              <button class="disbtn"> HighScore </button>
+              <button class="disbtn"> Find Tutors </button>
 
-      <hr style="margin-top: 20px;">
-
-      <footer>
-        <p id="progress">Question x of y</p>
-      </footer>
     </div>
   </div>
-  
-    <script src="./js/question.js"></script>
-    <script src="./js/controller.js"></script>
 
-        <script src="./js/app.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBv3sZ0_wc7IeLbtVBQlXIG8SSSkaLBOYc",
+    authDomain: "pre-test-bbc9a.firebaseapp.com",
+    databaseURL: "https://pre-test-bbc9a.firebaseio.com",
+    projectId: "pre-test-bbc9a",
+    storageBucket: "pre-test-bbc9a.appspot.com",
+    messagingSenderId: "868343466108",
+    appId: "1:868343466108:web:130b9302c1c7d2bc3061f9",
+    measurementId: "G-G8J9BMZM1X"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore()
+</script>
+  
+    <script src="./js/display.js"></script>
+
+
+        
+
+
 
 </body>
 </html>

@@ -51,8 +51,7 @@ function showScores() {
   var gameOverHtml = `<h1>Result</h1>`;
   gameOverHtml += `<h2 id = 'score'>Your Score: ${quiz.score} <h2>`
 
-  const display = document.getElementById('quiz');
-  console.log(document.querySelector('#quiz'))
+  const display = document.getElementById('display');
   display.innerHTML = gameOverHtml;
 }
 
