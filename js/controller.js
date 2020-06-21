@@ -15,9 +15,10 @@ function Quiz(questions) {
 
   }
 
-  Quiz.prototype.guess = function (answer) {
+  Quiz.prototype.guess = function (id, answer) {
     if (this.getQuestionIndex().correctAnswer(answer)) {
       this.score++;
+      document.getElementById(id).style.backgroundColor = 'green'
     }
     this.questionIndex++;
   }

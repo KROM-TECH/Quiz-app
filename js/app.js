@@ -2,7 +2,7 @@ var questions = [
   new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
   new Question('blah2, blah2, blah2', ['blep2', 'clip2', 'teas2', 'coffe2'], 'clip2'),
   new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
-  new Question('blah4, bla4h, bla4h', ['blep4', 'cli4p', 'teas4', 'coffe4'], 'clip4'),
+  new Question('blah4, bla4h, bla4h', ['blep4', 'clip4', 'teas4', 'coffe4'], 'clip4'),
 ]
 
 var quiz = new Quiz(questions)
@@ -10,6 +10,7 @@ var quiz = new Quiz(questions)
 populate()
 
 console.log(quiz.isEnded())
+
 function populate() {
   if (quiz.isEnded()) {
     //do something
@@ -19,14 +20,17 @@ function populate() {
   }
   else {
     //show questions
+
     var element = document.querySelector('#question');
     element.innerHTML = quiz.getQuestionIndex().text
 
     // show Choices
     var choices = quiz.getQuestionIndex().choices;
     for (var i = 0; i < choices.length; i++) {
+      document.querySelector('#btn' + i).style.backgroundColor = 'rgba(23, 11, 114, 0.8)'
       var element = document.querySelector('#choice' + i)
       element.innerHTML = choices[i];
+      
       guess('btn' + i, choices[i]);
     }
 
@@ -36,8 +40,9 @@ function populate() {
 function guess(id, guess) {
   var button = document.getElementById(id);
   button.onclick = function () {
-    quiz.guess(guess);
-    populate()
+    quiz.guess(id, guess);
+    
+    setTimeout( populate, 500)
   }
 }
 
