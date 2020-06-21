@@ -22,6 +22,7 @@ function populate() {
     //show questions
 
     var element = document.querySelector('#question');
+    let Answer = document.querySelector('.ans').innerHTML = ""
     element.innerHTML = quiz.getQuestionIndex().text
 
     // show Choices
@@ -42,7 +43,7 @@ function guess(id, guess) {
   button.onclick = function () {
     quiz.guess(id, guess);
     
-    setTimeout( populate, 500)
+    setTimeout( populate, 600)
   }
 }
 

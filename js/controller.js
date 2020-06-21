@@ -19,6 +19,9 @@ function Quiz(questions) {
     if (this.getQuestionIndex().correctAnswer(answer)) {
       this.score++;
       document.getElementById(id).style.backgroundColor = 'green'
+    } else {
+      let Answer = document.querySelector('.ans')
+      Answer.innerHTML = `Answer: ${ this.getQuestionIndex().Answer()}`
     }
     this.questionIndex++;
   }
