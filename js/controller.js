@@ -7,7 +7,8 @@ function Quiz(questions, num) {
 
 //this gets the current question you currently
   Quiz.prototype.getQuestionIndex = function () {
-    return this.questions[this.questionIndex];
+    return this.questions;
+    // [this.questionIndex];
   }
 
   Quiz.prototype.isEnded = function () {

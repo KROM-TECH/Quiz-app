@@ -1,11 +1,19 @@
 var questions;
-let QuestionAPI = 'https://questions.aloc.ng/api/q?subject=physics';
+let QuestionAPI = 'https://questions.aloc.ng/api/q?subject=english';
+let num = 5;
 
 function load() {
   fetch(QuestionAPI).then(function (res) {
     res.json()
       .then(function (dam) {
-        let questions = new Question(dam.data.question, [dam.data.option.a, dam.data.option.b, dam.data.option.c, dam.data.option.d], dam.data.option + ('.' + dam.data.answer)),
+        const ans = dam.data.answer;
+        const answer = dam.data.option[dam.data.answer]
+        console.log(answer)
+
+        var questions = new Question(dam.data.question, [dam.data.option.a, dam.data.option.b, dam.data.option.c, dam.data.option.d], answer);
+        console.log(questions)
+        populate(questions)
+
       })
   })
 }
@@ -13,11 +21,11 @@ function load() {
 
 var quiz = new Quiz(questions, num)
 
-populate()
+load()
 
 console.log(quiz.isEnded())
 
-function populate() {
+function populate(questions) {
   if (quiz.isEnded()) {
     //do something
     console.log('done1')
@@ -29,10 +37,10 @@ function populate() {
 
     var element = document.querySelector('#question');
     let Answer = document.querySelector('.ans').innerHTML = ""
-    element.innerHTML = quiz.getQuestionIndex().text
+    element.innerHTML = questions.text
 
     // show Choices
-    var choices = quiz.getQuestionIndex().choices;
+    var choices = questions.choices;
     for (var i = 0; i < choices.length; i++) {
       document.querySelector('#btn' + i).style.backgroundColor = 'rgba(23, 11, 114, 0.8)'
       var element = document.querySelector('#choice' + i)
