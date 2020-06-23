@@ -1,7 +1,9 @@
 var questions;
-let QuestionAPI = 'https://questions.aloc.ng/api/q?subject=english';
-let num = 5;
+var QuestionAPI = 'https://questions.aloc.ng/api/q?subject=english';
+var index = 1
+var num = 10;
 
+//based on the api request, displays questions and options
 function load() {
   fetch(QuestionAPI).then(function (res) {
     res.json()
@@ -20,7 +22,7 @@ function load() {
 
 
 var quiz = new Quiz(questions, num)
-
+// Call the function on DOMContentLoaded
 load()
 
 console.log(quiz.isEnded())
@@ -57,14 +59,14 @@ function guess(id, guess) {
   button.onclick = function () {
     quiz.guess(id, guess);
 
-    setTimeout(populate, 600)
+    setTimeout(load, 0)
   }
 }
 
 function showProgress() {
-  var currentQuestionNumber = quiz.questionIndex + 1;
+  var currentQuestionNumber = index ++;
   var elem = document.getElementById('progress');
-  elem.innerHTML = `Question ${currentQuestionNumber} of ${quiz.questions.length}`
+  elem.innerHTML = `Question ${currentQuestionNumber} of ${num}`
 }
 
 function showScores() {

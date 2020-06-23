@@ -18,12 +18,14 @@ function Quiz(questions, num) {
   }
 
   Quiz.prototype.guess = function (id, answer) {
-    if (this.getQuestionIndex().correctAnswer(answer)) {
+    console.log(Question.prototype.correctAnswer(answer))
+    if (Question.prototype.correctAnswer(answer)) {
       this.score++;
       document.getElementById(id).style.backgroundColor = 'green'
     } else {
       let Answer = document.querySelector('.ans')
-      Answer.innerHTML = `Answer: ${ this.getQuestionIndex().Answer()}`
+      document.getElementById(id).style.backgroundColor = 'red'
+      Answer.innerHTML = `Answer: ${Question.prototype.Answer}`
     }
     this.questionIndex++;
   }

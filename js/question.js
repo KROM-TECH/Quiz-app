@@ -3,13 +3,15 @@ function Question(text, choices, answer) {
   this.text = text;
   this.choices = choices;
   this.answer = answer;
-}
 
 
-Question.prototype.correctAnswer = function (choice) {
-  return choice === this.answer
-}
-//returns correct answer
-Question.prototype.Answer = function () {
-  return this.answer
+
+  Question.prototype.correctAnswer = function (choice) {
+
+    return choice === answer
+  }
+  //returns correct answer
+  Question.prototype.Answer = answer
+    
+  
 }
