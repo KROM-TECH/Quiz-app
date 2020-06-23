@@ -1,8 +1,9 @@
 //This accepts an array of questions
-function Quiz(questions) {
+function Quiz(questions, num) {
   this.score = 0;
   this.questions = questions;
   this.questionIndex = 0;
+  this.totalAvailableQuestions  = num;
 
 //this gets the current question you currently
   Quiz.prototype.getQuestionIndex = function () {
@@ -11,7 +12,7 @@ function Quiz(questions) {
 
   Quiz.prototype.isEnded = function () {
  
-    return this.questions.length === this.questionIndex;
+    return this.totalAvailableQuestions === this.questionIndex;
 
   }
 

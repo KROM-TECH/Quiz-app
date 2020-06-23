@@ -1,11 +1,17 @@
-var questions = [
-  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
-  new Question('blah2, blah2, blah2', ['blep2', 'clip2', 'teas2', 'coffe2'], 'clip2'),
-  new Question('blah, blah, blah', ['blep', 'clip', 'teas', 'coffe'], 'clip'),
-  new Question('blah4, bla4h, bla4h', ['blep4', 'clip4', 'teas4', 'coffe4'], 'clip4'),
-]
+var questions;
+let QuestionAPI = 'https://questions.aloc.ng/api/q?subject=physics';
 
-var quiz = new Quiz(questions)
+function load() {
+  fetch(QuestionAPI).then(function (res) {
+    res.json()
+      .then(function (dam) {
+        let questions = new Question(dam.data.question, [dam.data.option.a, dam.data.option.b, dam.data.option.c, dam.data.option.d], dam.data.option + ('.' + dam.data.answer)),
+      })
+  })
+}
+
+
+var quiz = new Quiz(questions, num)
 
 populate()
 
@@ -31,7 +37,7 @@ function populate() {
       document.querySelector('#btn' + i).style.backgroundColor = 'rgba(23, 11, 114, 0.8)'
       var element = document.querySelector('#choice' + i)
       element.innerHTML = choices[i];
-      
+
       guess('btn' + i, choices[i]);
     }
 
@@ -42,8 +48,8 @@ function guess(id, guess) {
   var button = document.getElementById(id);
   button.onclick = function () {
     quiz.guess(id, guess);
-    
-    setTimeout( populate, 600)
+
+    setTimeout(populate, 600)
   }
 }
 
@@ -56,6 +62,9 @@ function showProgress() {
 function showScores() {
   var gameOverHtml = `<h1>Result</h1>`;
   gameOverHtml += `<h2 id = 'score'>Your Score: ${quiz.score} <h2>`
+  gameOverHtml += `<button id="btn">Upload Score</button>`
+  gameOverHtml += `<button id="btn" onclick="location.reload()">Try Again</button>`
+  gameOverHtml += `<button id="btn">High Scores</button>`
 
   const display = document.getElementById('display');
   display.innerHTML = gameOverHtml;
