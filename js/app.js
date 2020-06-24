@@ -3,6 +3,16 @@ var QuestionAPI = 'https://questions.aloc.ng/api/q?subject=english';
 var index = 1
 var num = 10;
 
+//To display subject
+subject()
+function subject() {
+  fetch(QuestionAPI).then(function (res) {
+    res.json()
+      .then(function (dam) {
+        document.querySelector('#heading').innerHTML = dam.subject
+      })
+  })
+}
 //based on the api request, displays questions and options
 function load() {
   fetch(QuestionAPI).then(function (res) {
@@ -10,8 +20,6 @@ function load() {
       .then(function (dam) {
         const ans = dam.data.answer;
         const answer = dam.data.option[dam.data.answer]
-        console.log(answer)
-
         var questions = new Question(dam.data.question, [dam.data.option.a, dam.data.option.b, dam.data.option.c, dam.data.option.d], answer);
         console.log(questions)
         populate(questions)
@@ -30,9 +38,7 @@ console.log(quiz.isEnded())
 function populate(questions) {
   if (quiz.isEnded()) {
     //do something
-    console.log('done1')
     showScores()
-    console.log('done2')
   }
   else {
     //show questions

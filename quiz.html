@@ -5,25 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
+  <link rel="stylesheet" href="./css/materialize.css">
   <link rel="stylesheet" href="./css/style.css">
-
 </head>
 
 <body>
   <div class="grid">
     <div id="display">
 
-      <h1>Quiz</h1>
+      <h1 id="heading">Quiz</h1>
       <hr style="margin-top: 20px;">
       
       <p id="question"></p>
-      <div class="buttons">
-        <button id="btn0"><span class="opt">A</span><span id="choice0"></span></button>
-        <button id="btn1"><span class="opt">B</span><span id="choice1"></span></button>
-        <button id="btn2"><span class="opt">C</span><span id="choice2"></span></button>
-        <button id="btn3"><span class="opt">D</span><span id="choice3"></span></button>
-      </div>
       <div class="ans"></div>
+      <div class="buttons">
+        <button id="btn0"><span id="choice0"></span></button>
+        <button id="btn1"><span id="choice1"></span></button>
+        <button id="btn2"><span id="choice2"></span></button>
+        <button id="btn3"><span id="choice3"></span></button>
+      </div>
+      
       <hr style="margin-top: 20px;">
       
       <footer>
@@ -34,6 +35,7 @@
   </div>
 
 
+  <script src="./js/Materialize.js"></script>
   <script src="./js/question.js"></script>
   <script src="./js/controller.js"></script>
   <script src="./js/app.js"></script>
