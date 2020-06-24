@@ -3,6 +3,15 @@ var QuestionAPI = 'https://questions.aloc.ng/api/q?subject=english';
 var index = 1
 var num = 10;
 
+start()
+function start() {
+  var elems = document.querySelectorAll('.modal');
+  var elem = document.querySelector(".modal")
+  var instances = M.Modal.init(elems, { dismissible: false });
+  var instance = M.Modal.getInstance(elem);
+  instance.open();
+}
+
 //To display subject
 subject()
 function subject() {
@@ -77,12 +86,25 @@ function showProgress() {
 
 function showScores() {
   var gameOverHtml = `<h1>Result</h1>`;
-  gameOverHtml += `<h2 id = 'score'>Your Score: ${quiz.score} <h2>`
-  gameOverHtml += `<button id="btn">Upload Score</button>`
-  gameOverHtml += `<button id="btn" onclick="location.reload()">Try Again</button>`
-  gameOverHtml += `<button id="btn">High Scores</button>`
+  gameOverHtml += `<h2 id = 'score'>Your Score: ${quiz.score} <h2>
+  <input type= 'text' id='disName' placeholder='This would be made public'></input>
+  <button id="btn" class='upl' disabled>Upload Score</button>
+  <button id="btn" onclick="location.reload()">Try Again</button>
+  <button id="btn">High Scores</button>`
 
   const display = document.getElementById('display');
   display.innerHTML = gameOverHtml;
+  upl()
 }
 
+
+//react to thekeyboard event to check if the input is null or not
+function upl() {
+  document.querySelector('#disName').addEventListener('keyup', function (e) {
+    if (e.target.value == '') {
+      document.querySelector('.upl').disabled = true;
+    } else {
+      document.querySelector('.upl').disabled = false;
+    }
+  })
+}

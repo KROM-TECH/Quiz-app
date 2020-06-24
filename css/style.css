@@ -54,6 +54,14 @@ button {
   padding: 10px 10px;
 }
 
+#btn:disabled {
+  background-color: rgba(116, 115, 129, 0.8);
+}
+#btn:disabled:hover {
+  background-color: rgba(116, 115, 129, 0.8);
+  cursor: not-allowed;
+}
+
 #progress {
   color: black;
   font-size: large;
