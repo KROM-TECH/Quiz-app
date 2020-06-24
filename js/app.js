@@ -3,13 +3,17 @@ var QuestionAPI = 'https://questions.aloc.ng/api/q?subject=english';
 var index = 1
 var num = 10;
 
+
 start()
 function start() {
   var elems = document.querySelectorAll('.modal');
   var elem = document.querySelector(".modal")
-  var instances = M.Modal.init(elems, { dismissible: false });
   var instance = M.Modal.getInstance(elem);
   instance.open();
+
+
+  var instances = M.Modal.init(elems, { dismissible: false, onCloseEnd: function () { } });
+
 }
 
 //To display subject
