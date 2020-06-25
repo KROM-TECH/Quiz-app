@@ -13,7 +13,7 @@ function Quiz(questions, num) {
 
   Quiz.prototype.isEnded = function () {
  
-    return this.totalAvailableQuestions === this.questionIndex;
+    return num === this.questionIndex;
 
   }
 

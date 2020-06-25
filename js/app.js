@@ -1,19 +1,14 @@
+
 var questions;
 var QuestionAPI = 'https://questions.aloc.ng/api/q?subject=english';
 var index = 1
 var num = 10;
 
-start()
-function start() {
-  var elems = document.querySelectorAll('.modal');
-  var elem = document.querySelector(".modal")
-  var instances = M.Modal.init(elems, { dismissible: false });
-  var instance = M.Modal.getInstance(elem);
-  instance.open();
-}
 
 //To display subject
 subject()
+// Call the function on DOMContentLoaded
+load()
 function subject() {
   fetch(QuestionAPI).then(function (res) {
     res.json()
@@ -39,8 +34,7 @@ function load() {
 
 
 var quiz = new Quiz(questions, num)
-// Call the function on DOMContentLoaded
-load()
+
 
 console.log(quiz.isEnded())
 
@@ -97,8 +91,6 @@ function showScores() {
   display.innerHTML = gameOverHtml;
   upl()
 }
-
-
 //react to thekeyboard event to check if the input is null or not
 function upl() {
   document.querySelector('#disName').addEventListener('keyup', function (e) {
