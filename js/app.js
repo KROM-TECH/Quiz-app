@@ -85,12 +85,13 @@ function showProgress() {
 }
 
 function showScores() {
-  var gameOverHtml = `<h1>Result</h1>`;
-  gameOverHtml += `<h2 id = 'score'>Your Score: ${quiz.score} <h2>
-  <input type= 'text' id='disName' placeholder='This would be made public'></input>
-  <button id="btn" class='upl' disabled>Upload Score</button>
-  <button id="btn" onclick="location.reload()">Try Again</button>
- <button id="btn">High Scores</button>`
+  var gameOverHtml = `<h1>Result</h1>
+<h2 id='score'>Your Score: ${quiz.score} <h2>
+    <input type='text' id='disName' placeholder='This would be made public'></input>
+    <button id="btn" class='upl' disabled>Upload Score</button>
+    <button id="btn" onclick="location.reload()">Try Again</button>
+    <button id="btn">High Scores</button>`;
+ 
 
   const display = document.getElementById('display');
   display.innerHTML = gameOverHtml;

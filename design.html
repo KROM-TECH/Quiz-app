@@ -1,32 +1,69 @@
 <!-- Just an html page to hold all the design for the Site -->
 
- <!-- The UI for the QUIZ -->
-        <h1>Welcome</h1>
-        <hr style="margin-top: 20px; margin-bottom: 20px;">
+<!-- The UI for the QUIZ -->
+<h1>Welcome</h1>
+<hr style="margin-top: 20px; margin-bottom: 20px;">
 
-                <button id="btn0"> Start </button>
+<button class="disbtn" onclick="window.location.assign('quiz.html')"> Start </button>
+<button class="disbtn"> HighScore </button>
+<button class="disbtn"> Find Tutors </button>
 
- <!-- The UI for the QUIZ -->
-      <h1>Quiz</h1>
-      <hr style="margin-top: 20px;">
-      
-      <p id="question"></p>
-      <div class="buttons">
-        <button id="btn0"><span class="opt">A</span><span id="choice0"></span></button>
-        <button id="btn1"><span class="opt">B</span><span id="choice1"></span></button>
-        <button id="btn2"><span class="opt">C</span><span id="choice2"></span></button>
-        <button id="btn3"><span class="opt">D</span><span id="choice3"></span></button>
-      </div>
-      
-      <hr style="margin-top: 20px;">
-      
-      <footer>
-        <p id="progress">Question x of y</p>
-      </footer>
+<!-- The UI for the QUIZ Specifications -->
+<h1>Specifications</h1>
+<hr style="margin-top: 20px; margin-bottom: 20px;">
+<div class="input-field ">
+  <input id="ct" type="text" class="validate">
+  <label for="ct">Email</label>
+  <span class="helper-text" data-error="wrong" data-success="right">This should only be filled once and never
+    again</span>
+</div>
+
+<div class="input-field ">
+  <select style="display: block !important;">
+    <option value="" disabled selected>Choose your Subject</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+</div>
+
+<div class="input-field ">
+  <input id="quesNum" type="number" class="validate">
+  <label for="quesNum">Number of Questions</label>
+</div>
+
+<div class="input-field ">
+  <input id="Tim" type="number" class="validate">
+  <label for="Tim">Duration in minutes i.e 30 for 30mins</label>
+</div>
+
+<div class="center"><a class="waves-effect waves-purple btn-flat"><b>Start</b></a></div>
 
 
-      <!-- The UI for the Result -->
-      <h1>Result</h1>
-   <h2 id='score'>Your Score: ${quiz.score} <h2>
+<!-- The UI for the QUIZ -->
+<h1 id="heading">Quiz</h1>
+<hr style="margin-top: 20px;">
 
-      
+<p id="question"></p>
+<div class="ans"></div>
+<div class="buttons">
+  <button id="btn0"><span id="choice0"></span></button>
+  <button id="btn1"><span id="choice1"></span></button>
+  <button id="btn2"><span id="choice2"></span></button>
+  <button id="btn3"><span id="choice3"></span></button>
+</div>
+
+<hr style="margin-top: 20px;">
+
+<footer>
+  <p id="progress">Question x of y</p>
+</footer>
+
+
+<!-- The UI for the Result -->
+<h1>Result</h1>
+<h2 id='score'>Your Score: ${quiz.score} <h2>
+    <input type='text' id='disName' placeholder='This would be made public'></input>
+    <button id="btn" class='upl' disabled>Upload Score</button>
+    <button id="btn" onclick="location.reload()">Try Again</button>
+    <button id="btn">High Scores</button>
