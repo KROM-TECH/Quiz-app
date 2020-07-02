@@ -87,6 +87,13 @@ main .content button:hover {
   border: transparent;
 }
 
+.main {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 main .img img {
   width: 100%;
   height: auto;
@@ -201,6 +208,14 @@ li:first-child:hover {
     display: flex;
     flex-direction: row;
   }
+  .main {
+    position: absolute;
+    top: 0rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
   .nav-item:hover {
     color: black;
     padding: 0.7rem;
@@ -233,7 +248,6 @@ li:first-child:hover {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center !important;
-  
   }
   main .content {
     width: 100%;
@@ -253,12 +267,18 @@ li:first-child:hover {
     justify-content: center;
     margin-top: auto;
   }
-  .main{
+  .main {
     position: absolute;
-    top: 10rem;
+    /* top: 10rem; */
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .aside {
+    height: 4rem;
   }
 }
