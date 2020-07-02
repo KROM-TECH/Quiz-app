@@ -1,17 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 body {
   background-color: #392061;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 aside {
-  background-color: brown;
+  /* background-color: brown; */
   height: 100vh;
   width: 20vw;
+  padding-top: 15vh;
+  margin-left: 2rem;
+}
+
+.aside {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 main {
-  background-color: burlywood;
-  height: 100vh;
+  background-color: white;
+  height: 90vh;
   width: 70vw;
+  z-index: 10;
+  margin: 2rem 1rem 2rem auto;
+}
+
+.nav-item {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+  width: 20vw;
+  text-align: center;
+  border-radius: 50px 0px 0px 50px;
+  font-size: 20px;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+li:last-child {
+  margin-bottom: auto;
+  position: fixed;
+  bottom: 0;
+  background-color: transparent;
+}
+
+.nav-item .material-icons-outlined {
+  font-size: 36px !important;
+}
+
+.nav-item .nav-name {
+  margin-left: 1.5rem;
 }
