@@ -191,12 +191,15 @@ li:first-child:hover {
     bottom: 0px;
     margin: 0;
     flex-direction: row;
+    justify-content:center;
+    align-items: center;
     background-color: black;
     margin-bottom: 0;
     width: 100vw;
     height: 4rem;
     z-index: 3;
     overflow-x: auto;
+    overflow-y: hidden;
   }
   aside {
     margin: 0;
