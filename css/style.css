@@ -11,9 +11,9 @@ body {
   height: 900%;
   background-color: #fff;
   padding: 10px 50px 30px 50px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   border: 2px solid #ccc;
-  box-shadow: 10px 15px 5px #a0a0ac;
+  /* box-shadow: 10px 15px 5px #a0a0ac; */
 }
 
 .grid h1 {
@@ -44,12 +44,12 @@ button {
 }
 
 #btn, #btn0, #btn1, #btn2, #btn3 {
-  background-color: rgba(23, 11, 114, 0.8);
+  background-color: transparent !important;
   width: 250px;
   font-size: 20px;
-  color: #fff;
+  color: #000;
   border: 1px solid #1a1a1f;
-  border-radius: 10px;
+  border-radius: 4px;
   margin: 10px, 40px, 10px 0px;
   padding: 10px 10px;
 }
@@ -86,19 +86,19 @@ button {
 }
 
 .disbtn {
-  float: center;
   width: 70%;
-  background-color: rgba(23, 11, 114, 0.8);
+  /* background-color: rgba(23, 11, 114, 0.8); */
   font-size: 20px;
-  color: #fff;
+  color: #000;
   border: 1px solid #1a1a1f;
-  border-radius: 50px;
+  border-radius: 5px;
   margin: 10px, 40px, 10px 0px;
   padding: 10px 10px;
 }
 
 .disbtn:hover {
   cursor: pointer;
+  color: #fff;
   background-color: rgb(9, 2, 75);
 }
 
