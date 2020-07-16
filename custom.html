@@ -14,75 +14,118 @@
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
   }
-  .box{
-    width: 300px;
-    height: 400px;
+
+  .box {
+    width: 350px;
+    height: 439px;
     background-color: rgb(255, 255, 255);
     margin-bottom: 5px;
     border-radius: 10px;
-    border: 1px solid grey;
+    border: 1px solid #d0d0d0;
   }
-  button{
-    background-color: rgb(35, 131, 35);
+
+  button {
+    background-color: rgb(55, 131, 55);
     cursor: pointer;
   }
-  header{
+
+  header {
     text-align: center;
     /* background-color: rgb(33, 151, 33); */
     border-bottom: 1px solid white;
   }
-  form{
+
+  form {
     display: flex;
     flex-direction: column;
-    border: 0.1px solid grey;
+    border: 0.1px solid #d0d0d0;
     padding: 20px;
     margin: 20px 10px;
+    border-radius: px;
   }
-  textarea{
+
+  textarea {
     resize: none;
+    border: 2px solid #d0d0d0;
+    border-radius: 5px;
+    padding: 11px 0;
+    margin: 5px;
+    padding-left: 5px;
+    outline: none;
+  }
+
+  input {
+    border: 2px solid #d0d0d0;
+    border-radius: 5px;
+    padding: 11px 0;
+    padding-left: 5px;
+    margin: 5px;
+    outline: none;
+  }
+
+  ::placeholder {
+    font-size: larger;
+  }
+
+
+  #SUB{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    min-height: 42px;
+    padding: 7px 15px 8px 15px;
+    color: white;
+  }
+  #b123{
+    float: right !important;
+  }
+  #body123{
+    position: relative;
   }
 </style>
 
 <body>
-  <div id="box123" class="box">
-    <header>
-      <h3 style=" margin: 0;">Hello</h3>
-      <p>Please fill out the form below and we will get back to you as soon as possible.</p>
-    </header>
+  <div class="body123">
+<div id="box123" class="box">
+  <header>
+    <h3 style=" margin: 0;">Hello</h3>
+    <p>Please fill out the form below and we will get back to you as soon as possible.</p>
+  </header>
 
-    <form action="">
-      <div class="v123"></div>
-      <label for="">Name</label>
-      <input type="text">
+  <form action="">
+    <div class="v123"></div>
+    <input type="text" placeholder="* Name">
 
-      <div class="v123"></div>
-      <label for="">Email</label>
-      <input type="email">
+    <div class="v123"></div>
+    <input type="email" placeholder="* Email">
 
-      <div class="v123"></div>
-      <label for="">Message</label>
-      <textarea name="" id="" cols="30" rows="5"></textarea>
-    </form>
+    <div class="v123"></div>
+    <textarea name="" id="" cols="30" rows="5" placeholder="* Message"></textarea>
+
+    <button id="SUB">Submit</button>
+  </form>
+</div>
+
+<button id="b123" style="width: 60px; height: 60px; outline: none; border-radius: 50%; border:none; padding-top:5px;">
+  <i class="material-icons" id="c123" style="color: white;">chat</i> </button>
+
   </div>
-
-  <button id="b123" style="width: 45px; height: 45px; outline: none; border-radius: 50%; border:none; padding-top:5px;"> <i
-      class="material-icons" id="c123" style="color: white;">chat</i> </button>
-
+  
 </body>
 
 <script>
   // box = document.getElementById('box123').style.display = 'none'
-  document.getElementById('b123').addEventListener('click', ()=>{
+  document.getElementById('b123').addEventListener('click', () => {
     box = document.getElementById('box123').style.display
     console.log(box)
-    if(box == 'block'){
+    if (box == 'block') {
       document.getElementById('c123').innerHTML = 'chat'
       document.getElementById('box123').style.display = 'none'
-    }else{
-       document.getElementById('c123').innerHTML = 'close'
-       document.getElementById('box123').style.display = 'block'
+    } else {
+      document.getElementById('c123').innerHTML = 'close'
+      document.getElementById('box123').style.display = 'block'
     }
-    
+
   })
 </script>
 
